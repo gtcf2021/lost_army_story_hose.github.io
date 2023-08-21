@@ -1,0 +1,329 @@
+body {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url("img/black.png" );
+  background-size: auto;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  /*background-blend-mode:multiply;
+  min-height: 100vh;最小要滿版
+  background-size:cover ;
+  */
+  padding-bottom:20%; 
+  background-repeat:inherit;
+  margin: 0;
+  
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background:rgba(0, 61, 71, 0.586);
+  min-height: 100px;
+  padding: 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .social_icon,
+footer .time {
+  position:relative;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  text-align: center; 
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+footer .social_icon li {
+  list-style: none;
+}
+footer .social_icon li a{
+  font-size: 2em;
+  color:#fff;
+  margin:0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .time li{
+  font-size: 1.2em;
+  color:#fff;
+  margin:0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+}
+footer .social_icon li a:hover{
+  transform: translateY(-10px);
+}
+footer p{
+  color: #fff;
+  text-align: center; 
+  margin-top: 5px;
+  font-size: 1.1em;
+}
+footer .wave
+{
+  position:absolute;
+  top: -100px;
+  left:0;
+  width: 100%;
+  height: 100px;
+  background: url("img/wave.png" );
+  background-size: 1000px 100px;
+}
+
+footer .wave#wave1{
+  z-index:1000;
+  opacity:0.4;
+  bottom:0;
+  animation:animateWave 4s linear infinite;
+}
+footer .wave#wave2{
+  z-index:999;
+  opacity:0.2;
+  bottom:10px;
+  animation:animateWave_02 4s linear infinite;
+}
+footer .wave#wave3{
+  z-index:1000;
+  opacity:0.1;
+  bottom:15;
+  animation:animateWave 3s linear infinite;
+}
+footer .wave#wave4{
+  z-index:999;
+  opacity:0.3;
+  bottom: 20px;;
+  animation:animateWave_02 3s linear infinite;
+}
+@keyframes animateWave{
+  0%{
+    background-position-x: 1000px;
+  }
+  100%{
+    background-position-x: 0px;
+  }
+}
+@keyframes animateWave_02{
+  0%{
+    background-position-x: 0px;
+  }
+  100%{
+    background-position-x: 1000px;
+  }
+}
+
+.contact-info {
+  background-color:#003D47;
+  padding: 2.3rem 2.2rem;
+  position: relative;
+}
+
+.contact-info .title {
+  color: #003D47;
+}
+/*整個calendar往上移*/
+#calendar{
+  
+  padding: 3.5rem;/*離上面的距離*/
+}
+.table{
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.4em;
+  text-align: center;
+  --bs-body-color:rgb(252, 243, 243);
+  --bs-table-color-type:initial;
+  --bs-table-bg-type:initial;
+  --bs-table-color-state:initial;
+  --bs-table-bg-state:initial;
+  --bs-table-color:var(--bs-body-color);
+  --bs-table-bg:rgba(0, 61, 71, 0.3);
+  --bs-table-border-color:var(--bs-border-color);
+  --bs-table-accent-bg:transparent;
+  --bs-table-striped-color:var(--bs-body-color);
+  --bs-table-striped-bg:rgba(45, 51, 41, 0.46);
+  --bs-table-hover-color:var(--bs-body-color);
+  --bs-table-hover-bg:rgba(0, 0, 0, 0.075);
+  width:100%;margin-bottom:1rem;vertical-align:top;
+  border-color:var(--bs-table-border-color)}
+  .table>:not(caption)>*>*{padding:.5rem .5rem;
+    color:var(--bs-table-color-state,var(--bs-table-color-type,var(--bs-table-color)));
+    background-color:var(--bs-table-bg);
+    border-bottom-width:var(--bs-border-width);
+    box-shadow:inset 0 0 0 9999px var(--bs-table-bg-state,var(--bs-table-bg-type,var(--bs-table-accent-bg)))}
+.btn-delete{
+  border-radius: 5%;
+  background:rgba(43, 93, 193, 0.57);
+  color:#ffffff;
+  font-size:0.8em;
+  padding:5px 30px;
+  text-decoration:none;
+}
+html{
+  scroll-behavior: smooth;
+}
+.logo{
+  height: 130px;
+}
+
+ 
+  .text-white {
+    color: white;
+  }
+  .text-red{
+    color:rgb(255, 0, 0);
+  }
+  /*不可預約*/
+  .btn-danger{
+    background-color: rgba(220, 38, 6, 0.537);
+    backdrop-filter: blur(10px);
+  }
+  /*可預約*/
+  .btn-success{
+    background-color:rgba(2, 203, 5, 0.537);
+    backdrop-filter: blur(10px);
+  }
+  .btn-success:hover{
+    background-color:rgba(0, 255, 4, 0.686);
+  }
+ /* 上面的的< today > 鍵*/
+  .btn-primary{color:#fff;background-color:#36433c;border-color:#42474d}
+  .btn-primary.focus,.btn-primary:hover{color:#fff;background-color:#787029;border-color:#204d74}
+  .btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle.btn-primary.focus,.open>.dropdown-toggle.btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{color:#000000;background-color:#ffffff;border-color:#122b40}.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#337ab7;border-color:#2e6da4}.btn-primary .badge{color:#337ab7;background-color:#fff}
+  /*彈出視窗*/
+  .modal-title{
+    text-align: center;
+  }
+
+/*navbar*/
+@media(max-width:991px){
+  .logo{
+    height: 110px;
+  }
+  #offcanvasNavbar{
+    background-color: rgba(0, 61, 71,0.15);
+    backdrop-filter: blur(10px); 
+    
+  }
+  .active#offcanvasNavbar{
+    background-color: rgba(223, 75, 17, 0.15);
+    backdrop-filter: blur(10px); 
+    left: 0px;
+  }
+  .offcanvas-body{
+    display: flex;
+    align-items: center; 
+    line-height: 50px;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 760px),
+(min-device-width: 802px) and (max-device-width: 1020px) {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+
+    }
+    
+    
+
+    .empty {
+        display: none;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+
+/*
+Label the data
+
+    td:nth-of-type(1):before {
+      color: #ffffff;
+      content: "日期: ";
+    }
+    td:nth-of-type(2):before {
+        color: #ffffff;
+        content: "時間: ";
+    }
+    td:nth-of-type(3):before {
+      color: #ffffff;  
+      content: "人數: ";
+    }
+    td:nth-of-type(4):before {
+      color: #ffffff;  
+      content: "姓名: ";
+    }
+    td:nth-of-type(5):before {
+      color: #ffffff;
+      content: "電話: ";
+    }
+    td:nth-of-type(6):before {
+      color: #ffffff;
+      content: "備註: ";
+    }
+    td:nth-of-type(7):before {
+      color: #ffffff;
+      content: "是否刪除:";
+    }*/
+
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 802px) and (max-device-width: 1020px) {
+    body {
+        width: 495px;
+    }
+}
+
+@media (min-width:641px) {
+    table {
+        table-layout: fixed;
+    }
+    td {
+        width: 33%;
+    }
+}
+
+.row{
+    margin-top: 20px;
+}
+

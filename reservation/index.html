@@ -12,7 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  
   </head>
 
   
@@ -111,20 +110,19 @@
         </div>
 <!-------------------------預約彈出視窗-------------------------------------------------->
 <?php
-
-include("config.php");
+ include("config.php");
 
  if(isset($_POST['submit'])){
   
-    $name=$_POST['name'];
-    $phone=$_POST['phone'];
-    $note= $_POST['note'];
-    $period=$_POST['period'];
-    $people=$_POST['people'];
-    $date=$_POST['date'];
+    $reserve_name=$_POST['name'];
+    $reserve_phone=$_POST['phone'];
+    $reserve_note= $_POST['note'];
+    $reserve_period=$_POST['period'];
+    $reserve_people=$_POST['people'];
+    $reserve_date=$_POST['date'];
 
 
-    $insert = " insert into test2(name,phone,note,period,people,date)values('$name','$phone','$note','$period','$people','$date')";
+    $insert = " insert into test2(name,phone,note,period,people,date)values('$reserve_name','$reserve_phone','$reserve_note','$reserve_period','$reserve_people','$reserve_date')";
 
     $query= mysqli_query($con,$insert);
 
@@ -185,17 +183,17 @@ include("config.php");
             </div>
         <form method="post">
         <input type="text" class="form-control" id="live_search" autocomplete="off" name="search" placeholder="請輸入電話號碼">
-        <button class="btn btn-dark btn-sm" name="search" type="search">搜尋</button>
+        <button class="btn btn-dark btn-sm" name="search_phone" >搜尋</button>
         </form>
     </div> 
     <!-------------------------查詢表格-------------------------------------------------->
     <div id="searchresult">
     <?php
     include("connection.php");
-        if(isset($_POST['search'])){
+        if(isset($_POST['search_phone'])){
         $search=$_POST['search'];
-        $query = "SELECT * FROM test2 WHERE phone='$search'";
-        $result = mysqli_query($conn,$query);
+        $search_query = "SELECT * FROM test2 WHERE phone='$search'";
+        $result = mysqli_query($conn,$search_query);
 
         if(mysqli_num_rows($result)>0){?>
         <table class="table table-bordered table-striped mt-4">
@@ -226,7 +224,6 @@ include("config.php");
                         <td><?php echo $period;?></td>
                         <td><?php echo $people;?></td>
                         <td><?php echo $note;?></td>
-                        
                     </tr>
                     <?php
                 }
